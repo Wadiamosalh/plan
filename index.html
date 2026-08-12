@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>الخطة الاستراتيجية السنوية</title>
+
+<style>
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f5f7fb;
+    --card: #ffffff;
+    --text: #172033;
+    --muted: #718096;
+    --border: #e7ebf2;
+    --primary: #635bff;
+    --primary-dark: #4f46e5;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --dark: #111827;
+
+    --section-1: #6366f1;
+    --section-2: #0ea5e9;
+    --section-3: #10b981;
+    --section-4: #f59e0b;
+    --section-5: #ec4899;
+    --section-6: #8b5cf6;
+    --section-7: #14b8a6;
+    --section-8: #f97316;
+    --section-9: #64748b;
+    --section-10: #06b6d4;
+    --section-11: #84cc16;
+}
+
+body {
+    font-family:
+        "Cairo",
+        "Tajawal",
+        Arial,
+        sans-serif;
+
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    background:
+        radial-gradient(circle at 10% 20%, rgba(99,91,255,.35), transparent 30%),
+        radial-gradient(circle at 90% 10%, rgba(14,165,233,.25), transparent 30%),
+        linear-gradient(135deg, #111827, #1e293b);
+
+    color: white;
+    padding: 55px 30px 70px;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 50%;
+    left: -150px;
+    bottom: -300px;
+}
+
+.header-container {
+    max-width: 1500px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.15);
+    padding: 7px 14px;
+    border-radius: 50px;
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+.header h1 {
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.25;
+    margin-bottom: 12px;
+}
+
+.header p {
+    color: #cbd5e1;
+    max-width: 700px;
+    font-size: 16px;
+}
+
+.header-year {
+    min-width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+.header-year strong {
+    font-size: 46px;
+    line-height: 1;
+}
+
+.header-year span {
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+    width: min(1500px, calc(100% - 40px));
+    margin: -35px auto 60px;
+    position: relative;
+    z-index: 5;
+}
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 8px 30px rgba(15,23,42,.05);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.stat-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eef2ff;
+    color: var(--primary);
+    font-size: 22px;
+}
+
+.stat-info span {
+    display: block;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.stat-info strong {
+    display: block;
+    font-size: 27px;
+    margin-top: 2px;
+}
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.toolbar {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 15px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.toolbar-right,
+.toolbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search {
+    border: 1px solid var(--border);
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 10px 14px;
+    width: 260px;
+    font-family: inherit;
+    outline: none;
+}
+
+.search:focus {
+    border-color: var(--primary);
+    background: white;
+}
+
+.btn {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-light {
+    background: #f1f5f9;
+    color: var(--text);
+}
+
+.btn-light:hover {
+    background: #e2e8f0;
+}
+
+/* =========================================================
+   LEGEND
+========================================================= */
+
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.legend-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+}
+
+/* =========================================================
+   ROADMAP
+========================================================= */
+
+.roadmap {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(15,23,42,.04);
+}
+
+/* =========================================================
+   MONTH HEADER
+========================================================= */
+
+.month-header {
+    display: grid;
+    grid-template-columns: 440px repeat(12, minmax(65px, 1fr));
+    min-width: 1220px;
+    border-bottom: 1px solid var(--border);
+    background: #f8fafc;
+}
+
+.month-title {
+    padding: 17px 20px;
+    font-weight: 800;
+    color: #475569;
+    position: sticky;
+    right: 0;
+    background: #f8fafc;
+    z-index: 10;
+}
+
+.month {
+    text-align: center;
+    padding: 17px 4px;
+    font-size: 12px;
+    color: #64748b;
+    border-right: 1px solid var(--border);
+}
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section {
+    border-bottom: 1px solid var(--border);
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+.section-header {
+    display: grid;
+    grid-template-columns: 440px 1fr;
+    min-width: 1220px;
+    cursor: pointer;
+    background: white;
+    transition: .2s;
+}
+
+.section-header:hover {
+    background: #fafbff;
+}
+
+.section-info {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 18px 20px;
+}
+
+.section-number {
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.section-title {
+    font-weight: 800;
+    font-size: 15px;
+}
+
+.section-count {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.section-arrow {
+    margin-right: auto;
+    color: #94a3b8;
+    transition: .3s;
+}
+
+.section.open .section-arrow {
+    transform: rotate(180deg);
+}
+
+.section-progress {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.progress-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.progress-bar {
+    height: 7px;
+    flex: 1;
+    background: #edf0f5;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-value {
+    height: 100%;
+    width: 0%;
+    border-radius: 20px;
+    transition: .4s;
+}
+
+.progress-text {
+    width: 38px;
+    font-size: 11px;
+    color: var(--muted);
+    text-align: left;
+}
+
+/* =========================================================
+   TASKS
+========================================================= */
+
+.tasks {
+    display: none;
+}
+
+.section.open .tasks {
+    display: block;
+}
+
+.task {
+    display: grid;
+    grid-template-columns: 440px 1fr;
+    min-width: 1220px;
+    min-height: 60px;
+    border-top: 1px solid #f0f2f5;
+    background: #fff;
+}
+
+.task:hover {
+    background: #fcfcff;
+}
+
+.task-info {
+    padding: 12px 20px 12px 30px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    position: sticky;
+    right: 0;
+    background: inherit;
+    z-index: 5;
+}
+
+.checkbox {
+    width: 19px;
+    height: 19px;
+    border: 2px solid #cbd5e1;
+    border-radius: 5px;
+    cursor: pointer;
+    flex-shrink: 0;
+    appearance: none;
+    position: relative;
+    transition: .2s;
+}
+
+.checkbox:checked {
+    background: var(--success);
+    border-color: var(--success);
+}
+
+.checkbox:checked::after {
+    content: "✓";
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    top: -2px;
+    right: 2px;
+}
+
+.task-name {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.task.completed .task-name {
+    text-decoration: line-through;
+    color: #94a3b8;
+}
+
+.task-duration {
+    color: #94a3b8;
+    font-size: 10px;
+    margin-right: auto;
+    white-space: nowrap;
+}
+
+.timeline {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(65px, 1fr));
+}
+
+.timeline-month {
+    border-right: 1px solid #f0f2f5;
+}
+
+.task-bar {
+    position: absolute;
+    top: 18px;
+    height: 25px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    min-width: 30px;
+    box-shadow: 0 3px 8px rgba(0,0,0,.08);
+}
+
+.task-bar.continuous {
+    background: repeating-linear-gradient(
+        45deg,
+        #64748b,
+        #64748b 8px,
+        #7c8798 8px,
+        #7c8798 16px
+    );
+}
+
+.task-bar.completed-bar {
+    opacity: .55;
+}
+
+/* =========================================================
+   SECTION COLORS
+========================================================= */
+
+.section-1 .section-number,
+.section-1 .progress-value,
+.section-1 .task-bar {
+    background: var(--section-1);
+}
+
+.section-2 .section-number,
+.section-2 .progress-value,
+.section-2 .task-bar {
+    background: var(--section-2);
+}
+
+.section-3 .section-number,
+.section-3 .progress-value,
+.section-3 .task-bar {
+    background: var(--section-3);
+}
+
+.section-4 .section-number,
+.section-4 .progress-value,
+.section-4 .task-bar {
+    background: var(--section-4);
+}
+
+.section-5 .section-number,
+.section-5 .progress-value,
+.section-5 .task-bar {
+    background: var(--section-5);
+}
+
+.section-6 .section-number,
+.section-6 .progress-value,
+.section-6 .task-bar {
+    background: var(--section-6);
+}
+
+.section-7 .section-number,
+.section-7 .progress-value,
+.section-7 .task-bar {
+    background: var(--section-7);
+}
+
+.section-8 .section-number,
+.section-8 .progress-value,
+.section-8 .task-bar {
+    background: var(--section-8);
+}
+
+.section-9 .section-number,
+.section-9 .progress-value,
+.section-9 .task-bar {
+    background: var(--section-9);
+}
+
+.section-10 .section-number,
+.section-10 .progress-value,
+.section-10 .task-bar {
+    background: var(--section-10);
+}
+
+.section-11 .section-number,
+.section-11 .progress-value,
+.section-11 .task-bar {
+    background: var(--section-11);
+}
+
+/* =========================================================
+   NOTES
+========================================================= */
+
+.notes {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.note-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 22px;
+}
+
+.note-card h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.note-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.note-list {
+    display: grid;
+    gap: 10px;
+}
+
+.note-list div {
+    padding: 10px 12px;
+    background: #f8fafc;
+    border-radius: 10px;
+    font-size: 12px;
+    color: #475569;
+}
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.roadmap-wrapper {
+    overflow-x: auto;
+}
+
+.roadmap-wrapper::-webkit-scrollbar {
+    height: 9px;
+}
+
+.roadmap-wrapper::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.roadmap-wrapper::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 20px;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .header {
+        padding: 35px 20px 60px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-year {
+        width: 110px;
+        height: 110px;
+        min-width: 110px;
+    }
+
+    .header-year strong {
+        font-size: 30px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container {
+        width: min(100% - 20px, 1500px);
+    }
+
+    .toolbar {
+        align-items: stretch;
+    }
+
+    .toolbar-right,
+    .toolbar-left {
+        width: 100%;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .notes {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        padding: 16px;
+    }
+
+    .header h1 {
+        font-size: 28px;
+    }
+}
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print {
+
+    body {
+        background: white;
+    }
+
+    .header {
+        background: #111827 !important;
+        print-color-adjust: exact;
+    }
+
+    .toolbar,
+    .legend {
+        display: none;
+    }
+
+    .container {
+        margin: 20px auto;
+        width: 100%;
+    }
+
+    .section.open .tasks {
+        display: block;
+    }
+
+    .tasks {
+        display: block;
+    }
+
+    .roadmap {
+        box-shadow: none;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =======================================================
+     HEADER
+======================================================= -->
+
+<header class="header">
+
+    <div class="header-container">
+
+        <div class="header-content">
+
+            <div>
+
+                <div class="badge">
+                    🚀 الخطة الاستراتيجية
+                    <span>2026</span>
+                </div>
+
+                <h1>
+                    خارطة النمو والتوسع
+                </h1>
+
+                <p>
+                    خطة استراتيجية متكاملة لمدة 12 شهرًا لتطوير العلامة التجارية،
+                    المتجر الإلكتروني، المنتجات، التسويق، خدمة العملاء والتوسع.
+                </p>
+
+            </div>
+
+            <div class="header-year">
+                <strong>12</strong>
+                <span>شهرًا</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <!-- ===================================================
+         STATS
+    ==================================================== -->
+
+    <section class="stats">
+
+        <div class="stat-card">
+
+            <div class="stat-icon">📋</div>
+
+            <div class="stat-info">
+                <span>إجمالي المهام</span>
+                <strong id="totalTasks">0</strong>
+            </div>
+
+        </div>
+
+        <div class="stat-card">
+
+            <div class="stat-icon">⏱️</div>
+
+            <div class="stat-info">
+                <span>المهام المستمرة</span>
+                <strong id="continuousTasks">0</strong>
+            </div>
+
+        </div>
+
+        <div class="stat-card">
+
+            <div class="stat-icon">🏆</div>
+
+            <div class="stat-info">
+                <span>المهام المكتملة</span>
+                <strong id="completedTasks">0</strong>
+            </div>
+
+        </div>
+
+        <div class="stat-card">
+
+            <div class="stat-icon">📈</div>
+
+            <div class="stat-info">
+                <span>نسبة الإنجاز</span>
+                <strong id="overallProgress">0%</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         TOOLBAR
+    ==================================================== -->
+
+    <div class="toolbar">
+
+        <div class="toolbar-right">
+
+            <input
+                type="text"
+                id="search"
+                class="search"
+                placeholder="🔎 ابحث عن مهمة..."
+            >
+
+        </div>
+
+        <div class="toolbar-left">
+
+            <button
+                class="btn btn-light"
+                onclick="openAll()"
+            >
+                فتح الكل
+            </button>
+
+            <button
+                class="btn btn-light"
+                onclick="closeAll()"
+            >
+                إغلاق الكل
+            </button>
+
+            <button
+                class="btn btn-primary"
+                onclick="window.print()"
+            >
+                🖨️ طباعة
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ===================================================
+         LEGEND
+    ==================================================== -->
+
+    <div class="legend">
+
+        <div class="legend-item">
+            <span
+                class="legend-dot"
+                style="background:#6366f1"
+            ></span>
+            مهمة مجدولة
+        </div>
+
+        <div class="legend-item">
+            <span
+                class="legend-dot"
+                style="background:#64748b"
+            ></span>
+            مهمة مستمرة
+        </div>
+
+        <div class="legend-item">
+            <span
+                class="legend-dot"
+                style="background:#10b981"
+            ></span>
+            مكتملة
+        </div>
+
+    </div>
+
+
+    <!-- ===================================================
+         ROADMAP
+    ==================================================== -->
+
+    <div class="roadmap-wrapper">
+
+        <div class="roadmap">
+
+            <!-- MONTH HEADER -->
+
+            <div class="month-header">
+
+                <div class="month-title">
+                    المهمة / المرحلة
+                </div>
+
+                <div class="month">شهر 1</div>
+                <div class="month">شهر 2</div>
+                <div class="month">شهر 3</div>
+                <div class="month">شهر 4</div>
+                <div class="month">شهر 5</div>
+                <div class="month">شهر 6</div>
+                <div class="month">شهر 7</div>
+                <div class="month">شهر 8</div>
+                <div class="month">شهر 9</div>
+                <div class="month">شهر 10</div>
+                <div class="month">شهر 11</div>
+                <div class="month">شهر 12</div>
+
+            </div>
+
+
+            <!-- =================================================
+                 SECTIONS
+            ================================================== -->
+
+            <div id="sections"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ===================================================
+         NOTES
+    ==================================================== -->
+
+    <section class="notes">
+
+        <div class="note-card">
+
+            <h3>💡 طريقة استخدام الخطة</h3>
+
+            <div class="note-list">
+
+                <div>
+                    اضغط على أي مرحلة لعرض المهام التابعة لها.
+                </div>
+
+                <div>
+                    استخدم مربع البحث للوصول إلى أي مهمة بسرعة.
+                </div>
+
+                <div>
+                    ضع علامة ✓ عند إنجاز المهمة وسيتم تحديث نسبة الإنجاز تلقائيًا.
+                </div>
+
+                <div>
+                    المهام المستمرة تظهر بنمط مخطط لتمييزها عن المهام المحددة.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="note-card">
+
+            <h3>🎯 الهدف</h3>
+
+            <p>
+                تحويل الخطة الاستراتيجية إلى خارطة تنفيذ واضحة
+                يمكن متابعتها وقياس تقدمها شهريًا.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script>
+
+/* =========================================================
+   DATA
+========================================================= */
+
+const sections = [
+
+{
+    id: 1,
+    title: "أولاً: تأسيس العلامة التجارية",
+    tasks: [
+        ["تصميم هوية بصرية احترافية",1,"شعار، ألوان، خطوط"],
+        ["إعداد بروفايل الشركة",1,""],
+        ["تحديد الرسالة والرؤية والقيم",1,""],
+        ["بناء هوية موحدة بجميع المنصات",2,"متجر، سوشيال ميديا، مطبوعات"],
+        ["وضع دليل استخدام الهوية",1,""]
+    ]
+},
+
+{
+    id: 2,
+    title: "ثانياً: تطوير البنية التحتية",
+    tasks: [
+        ["تطوير المتجر الإلكتروني",2,""],
+        ["تحسين تجربة المستخدم (UI/UX)",1,""],
+        ["تحسين سرعة الموقع",1,""],
+        ["تحسين SEO",0,"عملية مستمرة",true],
+        ["ربط أدوات التحليل",1,"Google Analytics / Meta Pixel"],
+        ["ربط الأنظمة المحاسبية وإدارة المخزون",1,""],
+        ["أتمتة الرسائل وخدمة العملاء",1,"واتساب / شات بوت"],
+        ["إنشاء لوحة مؤشرات للإدارة",1,""]
+    ]
+},
+
+{
+    id: 3,
+    title: "ثالثاً: تطوير المنتجات",
+    tasks: [
+        ["اختيار المنتجات الأساسية",1,""],
+        ["تحليل المبيعات وتحديد المنتجات الرابحة",2,""],
+        ["اقتراح منتجات جديدة",2,""],
+        ["إدخال لابتوبات القيمينق",1,""],
+        ["إدخال الأجهزة المكتبية",1,""],
+        ["تطوير منتجات تعتمد على الألعاب",2,""],
+        ["تصميم منتجات موسمية",2,"رمضان / اليوم الوطني / العطلة الصيفية"],
+        ["إنشاء باقات متنوعة",1,""],
+        ["إطلاق باقة الملوك (صندوق فاخر)",1,"هدايا وكبار القيمرز"]
+    ]
+},
+
+{
+    id: 4,
+    title: "رابعاً: استراتيجية التسعير",
+    tasks: [
+        ["دراسة أسعار المنافسين",1,""],
+        ["تحديد هامش ربح مناسب",1,""],
+        ["بناء عروض موسمية",3,""],
+        ["باقات ذكية",1,""],
+        ["الاشتراكات الشهرية",1,""],
+        ["منتجات مخصصة للشركات والهدايا",1,""]
+    ]
+},
+
+{
+    id: 5,
+    title: "خامساً: المحتوى وبناء العلامة التجارية",
+    tasks: [
+        ["إعداد استراتيجية محتوى",1,""],
+        ["تصوير احترافي (منتجات + محتوى تعليمي وتقني)",1,""],
+        ["زيارة الفروع وتوثيق مراحل الافتتاح",2,""],
+        ["محتوى تعليمي وقصصي وشهادة عملاء",0,"عملية مستمرة",true],
+        ["محتوى UGC",0,"عملية مستمرة",true],
+        ["إنتاج 30 فيديو شهرياً مع مؤثرين صغار",0,"شهرياً",true],
+        ["التعاون مع 3 مؤثرين كبار على مستوى المملكة",2,""]
+    ]
+},
+
+{
+    id: 6,
+    title: "سادساً: التسويق الرقمي",
+    tasks: [
+        ["تحليل قاعدة بيانات العملاء (+2 مليون)",1,""],
+        ["تقسيم العملاء حسب الاهتمام",1,""],
+        ["حملات واتساب والبريد الإلكتروني والرسائل النصية",0,"عملية مستمرة",true],
+        ["إعلانات Google وMeta",0,"عملية مستمرة",true],
+        ["إعلانات TikTok وإعادة الاستهداف",0,"عملية مستمرة",true],
+        ["تحسين معدل التحويل",4,""],
+        ["زيادة متوسط قيمة الطلب (AOV)",0,"عملية مستمرة",true]
+    ]
+},
+
+{
+    id: 7,
+    title: "سابعاً: خدمة العملاء",
+    tasks: [
+        ["تطوير خدمة العملاء وإنشاء دليل للردود",1,""],
+        ["تقليل زمن الرد ومتابعة ما بعد البيع",1,""],
+        ["رفع رضا العملاء",0,"عملية مستمرة",true],
+        ["برامج الولاء",2,""]
+    ]
+},
+
+{
+    id: 8,
+    title: "ثامناً: بناء الثقة",
+    tasks: [
+        ["ضمانات ذهبية وسياسة استرجاع واضحة",1,""],
+        ["توثيق الجودة",1,""],
+        ["شهادات ومراجعات العملاء الحقيقية",2,""],
+        ["توثيق نتائج العملاء",0,"عملية مستمرة",true]
+    ]
+},
+
+{
+    id: 9,
+    title: "تاسعاً: تحليل المنافسين",
+    tasks: [
+        ["تحليل شامل (منتجات، أسعار، محتوى، إعلانات، تجربة، SWOT)",1,""],
+        ["تحديث التحليل بشكل دوري",1,"ربع سنوي"],
+        ["تحديث التحليل بشكل دوري",1,"ربع سنوي"],
+        ["تحديث التحليل بشكل دوري",1,"ربع سنوي"]
+    ]
+},
+
+{
+    id: 10,
+    title: "عاشراً: التوسع",
+    tasks: [
+        ["التوسع في مناطق المملكة",3,""],
+        ["البيع للشركات (B2B) والهدايا المؤسسية",2,""],
+        ["التوسع الخليجي",4,""],
+        ["الشراكات الاستراتيجية",6,""]
+    ]
+},
+
+{
+    id: 11,
+    title: "الحادي عشر: التشغيل",
+    tasks: [
+        ["توثيق الإجراءات وتحديد الصلاحيات",1,""],
+        ["بناء فريق العمل",2,""],
+        ["تدريب الموظفين",1,""],
+        ["مراقبة الجودة وتحسين العمليات التشغيلية",0,"عملية مستمرة",true]
+    ]
+}
+
+];
+
+
+/* =========================================================
+   BUILD HTML
+========================================================= */
+
+const sectionsContainer = document.getElementById("sections");
+
+let globalTaskId = 0;
+
+sections.forEach((section, sectionIndex) => {
+
+    const sectionElement = document.createElement("div");
+
+    sectionElement.className =
+        `section section-${section.id}`;
+
+    const total = section.tasks.length;
+
+    sectionElement.innerHTML = `
+
+        <div
+            class="section-header"
+            onclick="toggleSection(this.parentElement)"
+        >
+
+            <div class="section-info">
+
+                <div class="section-number">
+                    ${section.id}
+                </div>
+
+                <div>
+
+                    <div class="section-title">
+                        ${section.title}
+                    </div>
+
+                    <div class="section-count">
+                        ${total} مهام
+                    </div>
+
+                </div>
+
+                <div class="section-arrow">
+                    ▼
+                </div>
+
+            </div>
+
+            <div class="section-progress">
+
+                <div class="progress-container">
+
+                    <div class="progress-bar">
+                        <div class="progress-value"></div>
+                    </div>
+
+                    <div class="progress-text">
+                        0%
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="tasks"></div>
+
+    `;
+
+    const tasksContainer =
+        sectionElement.querySelector(".tasks");
+
+    section.tasks.forEach((task, taskIndex) => {
+
+        const [
+            name,
+            duration,
+            note,
+            continuous = false
+        ] = task;
+
+        const taskId = `task-${globalTaskId++}`;
+
+        const taskElement =
+            document.createElement("div");
+
+        taskElement.className = "task";
+
+        taskElement.dataset.name =
+            name.toLowerCase();
+
+        taskElement.dataset.section =
+            section.title.toLowerCase();
+
+        taskElement.innerHTML = `
+
+            <div class="task-info">
+
+                <input
+                    type="checkbox"
+                    class="checkbox"
+                    id="${taskId}"
+                    onchange="updateProgress()"
+                >
+
+                <label
+                    class="task-name"
+                    for="${taskId}"
+                >
+                    ${name}
+                </label>
+
+                <span class="task-duration">
+
+                    ${
+                        continuous
+                        ? "مستمر"
+                        : duration + " شهر"
+                    }
+
+                </span>
+
+            </div>
+
+            <div class="timeline">
+
+                ${Array.from(
+                    {length:12},
+                    () => `<div class="timeline-month"></div>`
+                ).join("")}
+
+                <div
+                    class="task-bar ${continuous ? "continuous" : ""}"
+                    style="
+                        right:${getStartPosition(sectionIndex,taskIndex)}%;
+                        width:${getTaskWidth(duration,continuous)}%;
+                    "
+                >
+
+                    ${
+                        continuous
+                        ? "مستمر"
+                        : duration === 1
+                        ? "تنفيذ"
+                        : `${duration} أشهر`
+                    }
+
+                </div>
+
+            </div>
+
+        `;
+
+        tasksContainer.appendChild(taskElement);
+
+    });
+
+    sectionsContainer.appendChild(sectionElement);
+
+});
+
+
+/* =========================================================
+   TIMELINE POSITION
+========================================================= */
+
+function getStartPosition(sectionIndex, taskIndex) {
+
+    /*
+        توزيع المهام بصريًا داخل السنة.
+        الهدف إعطاء الخطة شكلًا واقعيًا
+        بدل وضع جميع المهام في الشهر الأول.
+    */
+
+    const section = sections[sectionIndex];
+
+    let offset = 0;
+
+    section.tasks.forEach((task,index) => {
+
+        if(index < taskIndex) {
+
+            const duration = task[1];
+
+            if(duration > 0) {
+                offset += duration;
+            }
+
+        }
+
+    });
+
+    offset = offset % 12;
+
+    return (offset / 12) * 100;
+
+}
+
+
+function getTaskWidth(duration, continuous) {
+
+    if(continuous) {
+        return 96;
+    }
+
+    if(duration <= 0) {
+        return 8;
+    }
+
+    return Math.max(
+        (duration / 12) * 100,
+        7
+    );
+
+}
+
+
+/* =========================================================
+   SECTION TOGGLE
+========================================================= */
+
+function toggleSection(section) {
+
+    section.classList.toggle("open");
+
+}
+
+
+/* =========================================================
+   OPEN / CLOSE
+========================================================= */
+
+function openAll() {
+
+    document
+        .querySelectorAll(".section")
+        .forEach(section => {
+
+            section.classList.add("open");
+
+        });
+
+}
+
+
+function closeAll() {
+
+    document
+        .querySelectorAll(".section")
+        .forEach(section => {
+
+            section.classList.remove("open");
+
+        });
+
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+function updateProgress() {
+
+    const allTasks =
+        document.querySelectorAll(".task");
+
+    let completed = 0;
+
+    allTasks.forEach(task => {
+
+        const checkbox =
+            task.querySelector(".checkbox");
+
+        if(checkbox.checked) {
+
+            completed++;
+
+            task.classList.add("completed");
+
+            const bar =
+                task.querySelector(".task-bar");
+
+            if(bar) {
+                bar.classList.add("completed-bar");
+            }
+
+        } else {
+
+            task.classList.remove("completed");
+
+            const bar =
+                task.querySelector(".task-bar");
+
+            if(bar) {
+                bar.classList.remove("completed-bar");
+            }
+
+        }
+
+    });
+
+
+    const total =
+        allTasks.length;
+
+    const percentage =
+        total
+        ? Math.round((completed / total) * 100)
+        : 0;
+
+
+    document.getElementById("totalTasks")
+        .textContent = total;
+
+    document.getElementById("completedTasks")
+        .textContent = completed;
+
+    document.getElementById("overallProgress")
+        .textContent = percentage + "%";
+
+
+    /* SECTION PROGRESS */
+
+    document
+        .querySelectorAll(".section")
+        .forEach(section => {
+
+            const tasks =
+                section.querySelectorAll(".task");
+
+            const done =
+                section.querySelectorAll(
+                    ".checkbox:checked"
+                ).length;
+
+            const progress =
+                tasks.length
+                ? Math.round(
+                    (done / tasks.length) * 100
+                )
+                : 0;
+
+            const bar =
+                section.querySelector(
+                    ".progress-value"
+                );
+
+            const text =
+                section.querySelector(
+                    ".progress-text"
+                );
+
+            bar.style.width =
+                progress + "%";
+
+            text.textContent =
+                progress + "%";
+
+        });
+
+}
+
+
+/* =========================================================
+   COUNT CONTINUOUS TASKS
+========================================================= */
+
+function countContinuous() {
+
+    let count = 0;
+
+    sections.forEach(section => {
+
+        section.tasks.forEach(task => {
+
+            if(task[3] === true) {
+                count++;
+            }
+
+        });
+
+    });
+
+    document.getElementById(
+        "continuousTasks"
+    ).textContent = count;
+
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+const search =
+    document.getElementById("search");
+
+search.addEventListener("input", function() {
+
+    const value =
+        this.value.trim().toLowerCase();
+
+    document
+        .querySelectorAll(".task")
+        .forEach(task => {
+
+            const name =
+                task.dataset.name;
+
+            const section =
+                task.dataset.section;
+
+            const match =
+                !value ||
+                name.includes(value) ||
+                section.includes(value);
+
+            task.style.display =
+                match
+                ? "grid"
+                : "none";
+
+        });
+
+
+    /* Open matching sections */
+
+    if(value) {
+
+        document
+            .querySelectorAll(".section")
+            .forEach(section => {
+
+                const visible =
+                    section.querySelectorAll(
+                        '.task[style*="display: grid"]'
+                    ).length;
+
+                if(visible) {
+                    section.classList.add("open");
+                }
+
+            });
+
+    }
+
+});
+
+
+/* =========================================================
+   SAVE PROGRESS
+========================================================= */
+
+function saveProgress() {
+
+    const state = {};
+
+    document
+        .querySelectorAll(".checkbox")
+        .forEach((checkbox,index) => {
+
+            state[index] =
+                checkbox.checked;
+
+        });
+
+    localStorage.setItem(
+        "strategyPlanProgress",
+        JSON.stringify(state)
+    );
+
+}
+
+
+/* =========================================================
+   LOAD PROGRESS
+========================================================= */
+
+function loadProgress() {
+
+    const saved =
+        localStorage.getItem(
+            "strategyPlanProgress"
+        );
+
+    if(!saved) return;
+
+    try {
+
+        const state =
+            JSON.parse(saved);
+
+        document
+            .querySelectorAll(".checkbox")
+            .forEach((checkbox,index) => {
+
+                checkbox.checked =
+                    !!state[index];
+
+            });
+
+    } catch(error) {
+
+        console.log(
+            "تعذر تحميل التقدم"
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   AUTO SAVE
+========================================================= */
+
+document.addEventListener(
+    "change",
+    function(event) {
+
+        if(
+            event.target.classList.contains(
+                "checkbox"
+            )
+        ) {
+
+            saveProgress();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+countContinuous();
+
+loadProgress();
+
+updateProgress();
+
+
+/* افتح أول قسم تلقائيًا */
+
+document
+    .querySelector(".section")
+    .classList.add("open");
+
+</script>
+
+</body>
+</html>
